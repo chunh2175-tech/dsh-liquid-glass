@@ -1,0 +1,49 @@
+{
+  "name": "@local/liquid-glass",
+  "version": "0.2.1",
+  "private": true,
+  "type": "module",
+  "description": "Liquid Glass for DeepSeek Harness Desktop: native Windows Acrylic/Mica window material with borderless translucent glass surfaces. B-only, no wallpaper fallback.",
+  "license": "MIT",
+  "author": "Liquid Glass contributors",
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "liquid-glass",
+    "acrylic",
+    "windows-11",
+    "electron"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "docs/*.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-theme",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}
